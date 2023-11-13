@@ -1,0 +1,18 @@
+# Alacritty main config
+
+# Import addittional configuration files
+import:
+  - ~/.config/alacritty/font.yml
+  - ~/.config/alacritty/catppuccin-mocha.yml
+
+window:
+    padding:
+        x: 5
+        y: 5
+    opacity: 0.7
+
+selection:
+    save_to_clipboard: true
+
+mouse_bindings:
+    - { mouse: Right, mods: None, action: PasteSelection}
