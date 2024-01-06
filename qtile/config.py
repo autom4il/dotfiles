@@ -75,7 +75,7 @@ if __name__ in ["config", "__main__"]:
     # Floating window layout
     floating_layout = layouts[1]
 
-#@hook.subscribe.startup_once
-#def autostart():
-#    home = os.path.expanduser("~")
-#    subprocess.Popen([home + "/.config/qtile/autostart.sh"])
+@hook.subscribe.startup_once
+def autostart():
+    home = os.path.expanduser("~")
+    subprocess.Popen([home + "/.config/qtile/autostart.sh"])

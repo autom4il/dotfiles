@@ -1,0 +1,16 @@
+import = ["/home/autom4il/.config/alacritty/font.toml", "/home/autom4il/.config/alacritty/catppuccin-mocha.toml"]
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mods = "None"
+mouse = "Right"
+
+[selection]
+save_to_clipboard = true
+
+[window]
+opacity = 0.7
+
+[window.padding]
+x = 5
+y = 5

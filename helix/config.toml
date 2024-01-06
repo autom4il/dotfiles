@@ -1,6 +1,13 @@
-theme = "material_darker"
+theme = "bogster"
 
 [editor]
-
 rulers = [80]
+bufferline = "always"
 
+[editor.whitespace]
+render = "all"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"

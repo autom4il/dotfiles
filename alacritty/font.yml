@@ -1,9 +1,0 @@
-# Alacritty font config
-
-# Font to be used in the terminal
-font:
-  normal:
-    family: JetBrains Mono Nerd Font
-    style: Medium 
-
-  size: 10

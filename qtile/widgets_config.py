@@ -68,10 +68,16 @@ def init_widgets():
             font = "JetBrainsMono Nerd Font Mono",
             fontsize = 16,
         ),
-        widget.Volume(
-            fmt= "Vol:{}",
+        #widget.Volume(
+        #    fmt= "Vol:{}",
+        #    font = "JetBrainsMono Nerd Font Mono",
+        #    fontsize = 16,
+        #),
+        widget.Wlan(
+            format = "{essid} {percent:2.0%}",
             font = "JetBrainsMono Nerd Font Mono",
             fontsize = 16,
+            disconnected_message = "Wifi Disabled"
         ),
         widget.Spacer(
             length = 10,
