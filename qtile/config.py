@@ -46,11 +46,12 @@ keys = [
 # Groups
 groups = [
     # MonadTall layout
-    Group("1", layout = "monadtall", label = ""),
-    Group("2", layout = "monadtall", label = ""),
-    Group("3", layout = "max", label = ""),
-    Group("4", layout = "monadtall", label = ""),
-    Group("5", layout = "monadtall", label = ""),
+    Group("1", layout = "monadtall", label = "", screen_affinity = 0 ),
+    Group("2", layout = "monadtall", label = "", screen_affinity = 0),
+    Group("3", layout = "max", label = "", screen_affinity = 0),
+    Group("4", layout = "monadtall", label = "", screen_affinity = 0),
+    Group("5", layout = "monadtall", label = "", screen_affinity = 0),
+    Group("6", layout = "monadtall", label = "", screen_affinity = 1),
     ]
 
 # Mouse

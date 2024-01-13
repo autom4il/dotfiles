@@ -2,7 +2,10 @@
 from libqtile import widget
 
 def init_widgets():
-    widgets = [
+
+    groups = ['1', '2', '3', '4', '5', '6']
+
+    primary_screen_widgets = [
         widget.GroupBox(
             font="hack", 
             fontsize = 18, 
@@ -16,6 +19,7 @@ def init_widgets():
             highlight_method = "line", 
             highlight_color = "#000000", 
             this_current_screen_border = "#f86b09",
+            visible_groups = groups[0:5],
         ),
        widget.TextBox(
             font = "JetBrainsMono Nerd Font Mono",
@@ -121,4 +125,52 @@ def init_widgets():
             foreground = "#ffffff",
         ),
     ]
+
+    secondary_screen_widgets = [
+        widget.GroupBox(
+            font="hack",
+            fontsize = 18,
+            active = "#ffffff",
+            inactive = "#02848e",
+            background = "#000000",
+            margin_y = 3,
+            margin_x = 5,
+            padding_y = 5,
+            padding_x = 12,
+            highlight_method = "line",
+            highlight_color = "#000000",
+            this_current_screen_border = "#3a4977",
+            visible_groups = groups[5:6],
+        ),
+       widget.TextBox(
+            font = "JetBrainsMono Nerd Font Mono",
+            text = "",
+            padding = 0,
+            fontsize = 33,
+            background = "#028690",
+            foreground = "#000000",
+        ),
+        widget.CurrentLayoutIcon(
+            font = "JetBrainsMono Nerd Font Mono",
+            scale = 0.6,
+            background = "#028690",
+        ),
+        widget.CurrentLayout(
+            font = "JetBrainsMono Nerd Font Mono",
+            fontsize = "15",
+            padding = 5,
+            background = "#028690",
+        ),
+        widget.TextBox(
+            font = "JetBrainsMono Nerd Font Mono",
+            text = "",
+            padding = 0,
+            fontsize = 33,
+            background = "#000000",
+            foreground = "#028690",
+        ),
+    ]
+
+    widgets = primary_screen_widgets, secondary_screen_widgets
+
     return widgets
