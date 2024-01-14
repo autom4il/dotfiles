@@ -3,7 +3,7 @@ from libqtile import widget
 
 def init_widgets():
 
-    groups = ['1', '2', '3', '4', '5', '6']
+    groups = ['1', '2', '3', '4', '5', '6', '7']
 
     primary_screen_widgets = [
         widget.GroupBox(
@@ -19,7 +19,7 @@ def init_widgets():
             highlight_method = "line", 
             highlight_color = "#000000", 
             this_current_screen_border = "#f86b09",
-            visible_groups = groups[0:5],
+            visible_groups = groups[0:4],
         ),
        widget.TextBox(
             font = "JetBrainsMono Nerd Font Mono",
@@ -140,7 +140,7 @@ def init_widgets():
             highlight_method = "line",
             highlight_color = "#000000",
             this_current_screen_border = "#3a4977",
-            visible_groups = groups[5:6],
+            visible_groups = groups[4:7],
         ),
        widget.TextBox(
             font = "JetBrainsMono Nerd Font Mono",

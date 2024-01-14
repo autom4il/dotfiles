@@ -19,7 +19,7 @@ browser = "firefox"
 physlock = "physlock -p 'Locked!'"
 
 # Windows behaviour
-follow_mouse_focus = True
+follow_mouse_focus = False
 
 keys = [
     # Applications
@@ -46,12 +46,13 @@ keys = [
 # Groups
 groups = [
     # MonadTall layout
-    Group("1", layout = "monadtall", label = "", screen_affinity = 0 ),
-    Group("2", layout = "monadtall", label = "", screen_affinity = 0),
-    Group("3", layout = "max", label = "", screen_affinity = 0),
-    Group("4", layout = "monadtall", label = "", screen_affinity = 0),
-    Group("5", layout = "monadtall", label = "", screen_affinity = 0),
-    Group("6", layout = "monadtall", label = "", screen_affinity = 1),
+    Group("1", layout = "monadtall", label = ""),
+    Group("2", layout = "monadtall", label = ""),
+    Group("3", layout = "max", label = ""),
+    Group("4", layout = "monadtall", label = ""),
+    Group("5", layout = "monadtall", label = ""),
+    Group("6", layout = "monadtall", label = ""),
+    Group("7", layout = "monadtall", label = ""),
     ]
 
 # Mouse
