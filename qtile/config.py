@@ -39,7 +39,7 @@ terminal = guess_terminal()
 browser = "firefox"
 physlock = "physlock -p 'Locked!'"
 
-follow_mouse_focus = False
+follow_mouse_focus = True
 
 keys = [
         # Applications
@@ -140,9 +140,6 @@ def init_widgets_list():
             foreground = widget_c[8],
             background = widget_c[9],
         ),
-        widget.Spacer(
-            bar.STRETCH,
-        ),
         widget.TextBox(
             text = "",
             fontsize = 33,
@@ -151,10 +148,16 @@ def init_widgets_list():
             background = widget_c[11],
         ),
         widget.Systray(
-            icon_size = 130,
+            icon_size = 20,
             padding = 20,
             background = widget_c[12]
-            
+        ),
+        widget.TextBox(
+            text = "",
+            fontsize = 33,
+            padding = 0,
+            foreground = widget_c[13],
+            background = widget_c[13],
         ),
         widget.TextBox(
             text = "",
@@ -162,6 +165,9 @@ def init_widgets_list():
             padding = 0,
             foreground = widget_c[13],
             background = widget_c[14],
+        ),
+        widget.Spacer(
+            bar.STRETCH,
         ),
         widget.CPU(
             format = " {freq_current}GHz {load_percent}% ",
@@ -178,9 +184,6 @@ def init_widgets_list():
             font = "JetBrainsMono Nerd Font Mono",
             fontsize = 16,
             disconnected_message = "Wifi Disabled"
-        ),
-        widget.Spacer(
-            length = 10,
         ),
         widget.Battery(
             charge_char = '',
