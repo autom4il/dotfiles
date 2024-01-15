@@ -257,19 +257,19 @@ def init_screens():
     return [
         Screen(
                top = bar.Bar(widgets=widgets_list[0], size=30),
-               wallpaper = "~/Pictures/arch_wallpaper.png",
+               wallpaper = "~/Pictures/archtv.png",
                wallpaper_mode = "fill"
         ),
         Screen(
                top = bar.Bar(widgets=widgets_list[1], size=30),
-               wallpaper = "~/Pictures/arch_wallpaper.png",
+               wallpaper = "~/Pictures/archtv.png",
                wallpaper_mode = "fill"
         ),
     ]
 
 if __name__ in ["config", "__main__"]:
-    screens = init_screens()
     widgets_list = init_widgets_list()
+    screens = init_screens()
     layouts = init_layouts()
 
 mouse = [
