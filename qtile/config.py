@@ -272,6 +272,8 @@ if __name__ in ["config", "__main__"]:
     screens = init_screens()
     layouts = init_layouts()
 
+    floating_layout = layouts[1]
+
 mouse = [
         Drag([mod], "Button1", lazy.window.set_position_floating(),
             start=lazy.window.get_position()),
