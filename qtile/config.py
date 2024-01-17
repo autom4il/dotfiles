@@ -30,13 +30,15 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from libqtile.dgroups import simple_key_binder
 from colors import widget_c, monadtall_c, floating_c, maxstack_c
+import os
 
 dgroups_key_binder = simple_key_binder("mod4")
 
 mod = "mod4"
 terminal = guess_terminal()
 
-browser = "firefox"
+burpsuite = "BurpSuitePro"
+firefox = "firefox --ProfileManager"
 physlock = "physlock -p 'Locked!'"
 
 follow_mouse_focus = True
@@ -44,9 +46,9 @@ follow_mouse_focus = True
 keys = [
         # Applications
         Key([mod], "Return", lazy.spawn(terminal), desc = "Launch Alacritty"),
+        Key([mod], "b", lazy.spawn(burpsuite), desc = "Launch Burp Suite Pro"),
+        Key([mod], "f", lazy.spawn(firefox), desc = "Launch Firefox"),
         Key([mod], "r", lazy.spawn("rofi -show drun"), desc = "Launch Rofi"),
-        Key([mod], "b", lazy.spawn(browser), desc = "Launch Firefox"),
-
         # Lock session
         Key([mod, "shift"], "l", lazy.spawn(physlock), desc = "Launch Physlock"),
 
@@ -57,21 +59,23 @@ keys = [
 
         # Change between layouts
         Key([mod], "Tab", lazy.next_layout(), desc = "Next layout"),
-        
-        # Change between windows if using Max layout
+                # Change between windows if using Max layout
         Key([mod], "Right", lazy.layout.next(), desc = "Next window"),
         Key([mod], "Left", lazy.layout.previous(), desc = "Previous windows"),
     ]
 
 # Groups
 groups = [
-        Group("1", layout = "monadtall", label = "", screen_affinity = 0),
-        Group("2", layout = "monadtall", label = "", screen_affinity = 0),
-        Group("3", layout = "max", label = "", screen_affinity = 0),
-        Group("4", layout = "monadtall", label = "", screen_affinity = 0),
-        Group("5", layout = "monadtall", label = "", screen_affinity = 1),
-        Group("6", layout = "monadtall", label = "", screen_affinity = 1),
-        Group("7", layout = "monadtall", label = "", screen_affinity = 1),
+    Group("1", layout = "monadtall", label = "", screen_affinity = 0),
+    Group("2", layout = "monadtall", label = "", screen_affinity = 0),
+    Group("3", layout = "monadtall", label = "", screen_affinity = 0),
+    Group("4", layout = "max", label = "", screen_affinity = 0),
+    Group("5", layout = "monadtall", label = "", screen_affinity = 0),
+    Group("6", layout = "mondatall", label = "", screen_affinity = 1),
+    #Group("7", layout = "monadtall", label = "", screen_affinity = 1),
+    Group("7", layout = "monadtall", label = "", screen_affinity = 1),
+    Group("8", layout = "monadtall", label = "", screen_affinity = 1),
+    Group("9", layout = "monadtall", label = "", screen_affinity = 1),
     ]
 
 def init_layouts():
@@ -97,7 +101,7 @@ def init_layouts():
     return layouts
 
 def init_widgets_list():
-    groups = ['1', '2', '3', '4', '5', '6', '7']
+    groups = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
     primary_widgets_list = [
        widget.GroupBox(
             font="hack", 
@@ -112,7 +116,7 @@ def init_widgets_list():
             padding_y = 5, 
             padding_x = 12,
             highlight_method = "line", 
-            visible_groups = groups[0:4],
+            visible_groups = groups[0:5],
        ),
        widget.TextBox(
             font = "JetBrainsMono Nerd Font Mono",
@@ -180,19 +184,21 @@ def init_widgets_list():
             fontsize = 16,
         ),
         widget.Wlan(
-            format = "{essid} {percent:2.0%}",
+            format = "{essid} {percent:2.0%} ",
             font = "JetBrainsMono Nerd Font Mono",
             fontsize = 16,
-            disconnected_message = "Wifi Disabled"
+            disconnected_message = "Wifi Disabled "
         ),
         widget.Battery(
             charge_char = '',
             font = "JetBrainsMono Nerd Font Mono",
             fontsize = 16,
             update_interval = 1,
+            low_foreground = widget_c[15],
+            low_percentage = 0.3,
         ),
         widget.Clock(
-            format = "%I:%M %p ",
+            format = " %I:%M %p ",
             font = "JetBrainsMono Nerd Font Mono",
             fontsize = 15,
             foreground = widget_c[15],
@@ -202,8 +208,8 @@ def init_widgets_list():
             format = "%a %Y-%m-%d",
             font = "JetBrainsMono Nerd Font Mono",
             fontsize = 16,
-            foreground = widget_c[15],
-            backgroung = widget_c[16],
+            foreground = widget_c[17],
+            backgroung = widget_c[18],
         ),
     ]
 
@@ -221,7 +227,7 @@ def init_widgets_list():
             padding_y = 5,
             padding_x = 12,
             highlight_method = "line",
-            visible_groups = groups[4:7],
+            visible_groups = groups[5:],
         ),
         widget.TextBox(
             font = "JetBrainsMono Nerd Font Mono",
@@ -272,6 +278,7 @@ if __name__ in ["config", "__main__"]:
     screens = init_screens()
     layouts = init_layouts()
 
+    # Floating window layout
     floating_layout = layouts[1]
 
 mouse = [
@@ -286,3 +293,4 @@ mouse = [
 def autostart():
     home = os.path.expanduser("~")
     subprocess.Popen([home + "/.config/qtile/autostart.sh"])
+
