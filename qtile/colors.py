@@ -49,8 +49,14 @@ widget_c = [
 
         ### Clock ###
         # Colors 15
-        ["#ffffff", "#ffffff"], # foreground
+        ["#F86B09", "#F86B09"], # foreground
         # Colors 16
+        ["#000000", "#000000"], # background
+
+        ### Date ###
+        # Colors 17
+        ["#ffffff", "#ffffff"], # foreground
+        # Colors 18
         ["#000000", "#000000"], # background
 ]
 
