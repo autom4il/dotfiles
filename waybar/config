@@ -1,6 +1,6 @@
 {
     // Waybar at top layer
-    // "layer": "top",
+    "layer": "top",
 
     // Waybar position (top|bottom|left|right)
     "position": "top",
@@ -16,7 +16,9 @@
 
     // Choose the order of the modules
     "modules-center": ["hyprland/workspaces"],
+    //"modules-left": [],
     "modules-right": [
+        "tray",
         "custom/pacman",
         "custom/dunst",
         "cpu",
@@ -44,6 +46,14 @@
         "persistent-workspaces": {
             "*": 5
         }
+    },
+
+// Left modules
+
+// Right modules
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10,
     },
 
     "custom/pacman": {
