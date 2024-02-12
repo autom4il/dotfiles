@@ -1,0 +1,93 @@
+{
+    // Waybar at top layer
+    "layer": "top",
+
+    // Waybar position (top|bottom|left|right)
+    "position": "top",
+
+    // Waybar height (to be removed for auto height)
+    // "height": 20,
+
+    // Waybar width
+    "width": 1910,
+
+    // Gaps between modules (4px)
+    "spacing": 5,
+
+    // Choose the order of the modules
+    "modules-center": ["hyprland/workspaces"],
+    //"modules-left": [],
+    "modules-right": [
+        "tray",
+        "custom/pacman",
+        "custom/dunst",
+        "cpu",
+        "memory",
+        "pulseaudio",
+        "custom/clock"
+    ],
+
+    //Modules configuration
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "I",
+            "2": "II",
+            "3": "III",
+            "4": "IV",
+            "5": "V",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+
+// Left modules
+
+// Right modules
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10,
+    },
+
+    "custom/pacman": {
+        "format": "  {}   ",
+        "interval": "once",
+        "exec": "$HOME/.config/waybar/scripts/pacman-updates.sh",
+    },
+
+    "custom/dunst": {
+        "exec": "$HOME/.config/waybar/scripts/dunst.sh",
+        "on-click": "dunstctl set-paused toggle",
+        "restart-interval": 1,
+    },
+
+    "cpu": {
+        "interval": 1,
+        "format": "   {usage}%  ",
+    },
+
+    "memory": {
+        "format": "    {}%  ",
+    },
+
+    "pulseaudio": {
+        "format": "{volume}%",
+        "format-muted": "   ",
+        "on-click": "pulseaudio-ctl mute",
+        "on-click-right": "pulseaudio-ctl mute-input",
+        "on-scroll-down": "pulseaudio-ctl down",
+        "on-scroll-up": "pulseaudio-ctl up"
+    },
+
+    "custom/clock": {
+        "exec": "date +'  %H:%M %Y-%m-%d  '",
+        "interval": 1,
+    },
+}
