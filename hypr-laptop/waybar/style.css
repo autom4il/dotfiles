@@ -1,0 +1,120 @@
+@define-color backgroundlight #FFFFFF;
+@define-color backgrounddark #FFFFFF;
+/* Black outer circle workspaces color */
+@define-color workspaces-background1 #5A5C59;
+/* Inned circle workspaces color */
+@define-color workspaces-background2 #0F5076;
+/* @define-color bordercolor #9FC5E8; */
+/* White font for workspace numbers*/
+@define-color textcolor1 #FFFFFF;
+@define-color textcolor2 #000000;
+@define-color textcolor3 #FFFFFF;
+/* Color used for cpu, memory etc... */
+@define-color iconcolor1 #FFFFFF;
+/* Color used for pacman updates */
+@define-color iconcolor2 #FFFFFF;
+@define-color icon-color-background1 #0F5076;
+@define-color icon-color-background2 #EF6C00;
+/* Border color for memory, cpu, volume etc...*/
+@define-color border-color #1891CD;
+/* Wrap color for memory, cpu, volume etc...*/
+@define-color box-shadow-color #FFFFFF;
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "FiraCode Nerd Font Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 10px;
+}
+
+/* Main waybar CSS style */
+window#waybar {
+    background: rgba(12, 12, 12, 0.1);
+    color: #000000;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+}
+
+#workspaces {
+    background: @workspaces-background1;
+    margin: 3px 1px 3px 1px;
+    padding: 0px 1px;
+    border-radius: 15px;
+    /*border: 0px;*/
+    border: 2px solid @border-color;
+    font-weight: bold;
+    font-style: normal;
+    opacity: 0.8;
+    font-size: 10px;
+    color: @textcolor1;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 4px 3px;
+    border-radius: 15px;
+    border: 0px;
+    color: @textcolor1;
+    background-color: @workspaces-background2;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.4;
+}
+
+#workspaces button.active {
+    color: @textcolor1;
+    background: @workspaces-background2;
+    border-radius: 15px;
+    min-width: 20px;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
+
+#workspaces button:hover {
+    color: @textcolor1;
+    background: @workspaces-background2;
+    border-radius: 15px;
+    opacity:0.7;
+}
+
+#disk,
+#memory,
+#cpu,
+#language,
+#custom-clock,
+#custom-dunst,
+#wireplumber,
+#backlight,
+#battery {
+    background: @icon-color-background1;
+    margin: 5px 1px 8px 1px;
+    /* Padding is the hight of the the widgets */
+    padding:2px;
+    border: 2px solid @border-color;
+    /*border: 0px;*/
+    /*box-shadow: inset 0 -1px @box-shadow-color;*/
+    /* Rounded corners */
+    border-radius: 10px;
+    font-size:13px;
+    font-weight: bold;
+    font-style: normal;
+    color:@iconcolor1;
+}
+
+#custom-pacman { 
+    background: @icon-color-background2;
+    /* The 2nd and the last value of the margin, gives the spaces */
+    margin: 5px 1px 8px 10px;
+    /* Padding is the hight of the the widgets */
+    padding:2px;
+    /*border: 4px solid @border-color;*/
+    /*border: 0px;*/
+    border: 2px solid @border-color;
+    /*box-shadow: inset 0 -3px @box-shadow-color;*/
+    /* Rounded corners */
+    border-radius: 10px;
+    font-size:14px;
+    font-weight: bold;
+    font-style: normal;
+    color:@iconcolor2;
+}
+

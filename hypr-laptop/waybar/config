@@ -1,0 +1,112 @@
+{
+    // Waybar at top layer
+    "layer": "top",
+
+    "output": "eDP-1",
+
+    // Waybar position (top|bottom|left|right)
+    "position": "top",
+
+    // Waybar height (to be removed for auto height)
+    // "height": 10,
+
+    // Waybar width
+    "width": 1910,
+
+    // Gaps between modules (4px)
+    "spacing": 5,
+
+    // Choose the order of the modules
+    "modules-center": ["hyprland/workspaces"],
+    //"modules-left": [],
+    "modules-right": [
+        "tray",
+        "custom/pacman",
+        "custom/dunst",
+        "cpu",
+        "memory",
+        "backlight",
+        "wireplumber",
+        "battery",
+        "custom/clock"
+    ],
+
+    //Modules configuration
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "I",
+            "2": "II",
+            "3": "III",
+            "4": "IV",
+            "5": "V",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+
+// Left modules
+
+// Right modules
+    "tray": {
+        "icon-size": 15,
+        "spacing": 10,
+    },
+
+    "custom/pacman": {
+        "format": "  {}   ",
+        "interval": "once",
+        "exec": "$HOME/.config/waybar/scripts/pacman-updates.sh",
+    },
+
+    "custom/dunst": {
+        "exec": "$HOME/.config/waybar/scripts/dunst.sh",
+        "on-click": "dunstctl set-paused toggle",
+        "restart-interval": 1,
+    },
+
+    "cpu": {
+        "interval": 1,
+        "format": "  CPU {usage}%  ",
+    },
+
+    "memory": {
+        "format": "  Mem: {}%  ",
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "  Bright: {percent}% {icon} ",
+    },
+
+    "wireplumber": {
+        "format": "  Vol:{volume}%  ",
+        "format-muted": "   ",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "max-volume": 100,
+        "scroll-step": 5
+    },
+
+    "battery": {
+        "bat": "BAT0",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "  Bat: {capacity}% {icon} ",
+        "max-length": 25
+    },
+
+    "custom/clock": {
+        "exec": "date +'  %H:%M %Y-%m-%d  '",
+        "interval": 1,
+    },
+}
