@@ -9,7 +9,7 @@
     // "height": 20,
 
     // Waybar width
-    "width": 1910,
+    "width": 5115,
 
     // Gaps between modules (4px)
     "spacing": 5,
@@ -23,7 +23,7 @@
         "custom/dunst",
         "cpu",
         "memory",
-        "pulseaudio",
+        "wireplumber",
         "custom/clock"
     ],
 
@@ -57,7 +57,7 @@
     },
 
     "custom/pacman": {
-        "format": "  {}   ",
+        "format": "  {}   ",
         "interval": "once",
         "exec": "$HOME/.config/waybar/scripts/pacman-updates.sh",
     },
@@ -70,20 +70,19 @@
 
     "cpu": {
         "interval": 1,
-        "format": "   {usage}%  ",
+        "format": "  CPU {usage}%  ",
     },
 
     "memory": {
-        "format": "    {}%  ",
+        "format": "  Mem: {}%  ",
     },
 
-    "pulseaudio": {
-        "format": "{volume}%",
+    "wireplumber": {
+        "format": "  Vol:{volume}%  ",
         "format-muted": "   ",
-        "on-click": "pulseaudio-ctl mute",
-        "on-click-right": "pulseaudio-ctl mute-input",
-        "on-scroll-down": "pulseaudio-ctl down",
-        "on-scroll-up": "pulseaudio-ctl up"
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "max-volume": 100,
+        "scroll-step": 5
     },
 
     "custom/clock": {
