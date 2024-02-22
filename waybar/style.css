@@ -130,8 +130,8 @@ window#waybar {
 }
 
 #custom-pacman { 
-    background: rgb(255,79,0);
-    background: linear-gradient(111deg, rgba(255,79,0,1) 0%, rgba(255,147,0,1) 79%, rgba(251,255,0,1) 100%); 
+    background: rgb(23,46,66);
+    background: linear-gradient(117deg, rgba(23,46,66,1) 0%, rgba(23,46,66,1) 57%, rgba(0,226,255,1) 100%); 
     /* The 2nd and the last value of the margin, gives the spaces */
     margin: 5px 1px 8px 10px;
     /* Padding is the hight of the the widgets */
