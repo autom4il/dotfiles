@@ -5,7 +5,8 @@ window {
     font-family: "Fira Code Nerd Font Mono";
     margin: 10px;
     border: 3px solid #CCCCC8;
-    background: linear-gradient(45deg, rgba(15, 80, 118, 1) 50%, rgba(15, 80, 118, 1) 50%, rgba(24, 145, 205, 1) 90%, rgba(24, 145, 205, 1) 90%);
+    background: rgb(23,46,66);
+    background: linear-gradient(117deg, rgba(23,46,66,1) 0%, rgba(78,81,79,1) 85%, rgba(78,81,79,1) 100%); 
     border-radius: 15px;
     color: white;
 }
@@ -36,9 +37,9 @@ window {
 #input {
     margin-bottom: 15px;
     border: 2px solid #FFFFFF;
+    border-radius: 20px;
     padding: 3px;
-    background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(191,224,241,1) 58%, rgba(24,145,205,1) 96%); 
-    color: black;
+    background: #FFFFFF;
+    color: white;
 }
 
