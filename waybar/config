@@ -2,35 +2,40 @@
     // Waybar at top layer
     "layer": "top",
 
+    "output": "eDP-1",
+
     // Waybar position (top|bottom|left|right)
     "position": "top",
 
     // Waybar height (to be removed for auto height)
-    // "height": 20,
+    // "height": 10,
 
     // Waybar width
-    "width": 5115,
+    "width": 1910,
 
     // Gaps between modules (4px)
     "spacing": 5,
 
     // Choose the order of the modules
     "modules-center": ["hyprland/workspaces"],
-    //"modules-left": [],
-    "modules-right": [
+    "modules-left": [
         "tray",
+    ],
+    "modules-right": [
         "custom/pacman",
         "custom/dunst",
         "cpu",
         "memory",
+        "backlight",
         "wireplumber",
+        "battery",
         "custom/clock"
     ],
 
     //Modules configuration
     "hyprland/workspaces": {
         "disable-scroll": true,
-        "all-outputs": true,
+        "all-outputs": false,
         "warp-on-scroll": false,
         "format": "{icon}",
         "format-icons": {
@@ -52,7 +57,7 @@
 
 // Right modules
     "tray": {
-        "icon-size": 21,
+        "icon-size": 15,
         "spacing": 10,
     },
 
@@ -77,12 +82,28 @@
         "format": "  Mem: {}%  ",
     },
 
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "  Bright: {percent}% {icon} ",
+    },
+
     "wireplumber": {
         "format": "  Vol:{volume}%  ",
         "format-muted": "   ",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "max-volume": 100,
         "scroll-step": 5
+    },
+
+    "battery": {
+        "bat": "BAT0",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "  Bat: {capacity}% {icon} ",
+        "max-length": 25
     },
 
     "custom/clock": {
