@@ -1,35 +1,42 @@
-@define-color backgroundlight #FFFFFF;
-@define-color backgrounddark #FFFFFF;
-/* Black outer circle workspaces */
-@define-color workspaces-background1 #000000;
-/* Forest green */
-@define-color workspaces-background2 #EDF2F5;
-/* @define-color bordercolor #9FC5E8; */
-/* Black font */
-@define-color textcolor1 #000000;
-@define-color textcolor2 #000000;
-@define-color textcolor3 #FFFFFF;
+/* Workspaces                                  */
+
+/* Black outer circle workspaces color */
+@define-color workspaces-background1 #5A5C59;
+
+/* Inned circle workspaces color */
+@define-color workspaces-background2 #0F5076;
+
+/* White font for workspace numbers*/
+@define-color textcolor1 #FFFFFF;
+/*                                             */
+
+/* Widgets                                     */
+
 /* Color used for cpu, memory etc... */
-@define-color iconcolor1 #000000;
+@define-color iconcolor1 #FFFFFF;
+
 /* Color used for pacman updates */
 @define-color iconcolor2 #FFFFFF;
-@define-color icon-color-background1 #D6E9f4;
+@define-color icon-color-background1 #0F5076;
 @define-color icon-color-background2 #EF6C00;
+
 /* Border color for memory, cpu, volume etc...*/
-@define-color border-color #D1D5E1;
+@define-color border-color #1891CD;
+
 /* Wrap color for memory, cpu, volume etc...*/
-@define-color box-shadow-color #FF004E;
+@define-color box-shadow-color #FFFFFF;
+
+/*                                             */ 
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "FiraCode Nerd Font Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 10px;
 }
 
-/* Main waybar CSS style */
+/* Main waybar CSS style*/
 window#waybar {
     background: rgba(12, 12, 12, 0.1);
-    color: #000000;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 15px;
@@ -40,7 +47,7 @@ window#waybar {
     margin: 5px 1px 6px 1px;
     padding: 0px 1px;
     border-radius: 15px;
-    border: 0px;
+    border: 2px solid @border-color;
     font-weight: bold;
     font-style: normal;
     opacity: 0.8;
@@ -61,7 +68,7 @@ window#waybar {
 
 #workspaces button.active {
     color: @textcolor1;
-    background: @workspaces-background2;
+    background: linear-gradient(118deg, rgba(15, 80, 118, 1) 40%, rgba(15, 80, 118, 1) 40%, rgba(24, 145, 205, 1) 70%, rgba(24, 145, 205, 1) 70%); 
     border-radius: 15px;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
@@ -73,38 +80,79 @@ window#waybar {
     background: @workspaces-background2;
     border-radius: 15px;
     opacity:0.7;
+    box-shadow: 0px -0px rgba(15, 80, 118, 1);
 }
 
-#disk,#memory,#cpu,#language,#custom-clock,#custom-dunst,#wireplumber {
-    background: @icon-color-background1;
+#disk,
+#memory,
+#cpu,
+#language,
+#custom-clock,
+#custom-dunst,
+#wireplumber,
+#backlight,
+#battery {
+    background: linear-gradient(118deg, rgba(15, 80, 118, 1) 20%, rgba(15, 80, 118, 1) 20%, rgba(24, 145, 205, 1) 90%, rgba(24, 145, 205, 1) 90%); 
     margin: 5px 1px 8px 1px;
     /* Padding is the hight of the the widgets */
-    padding:2px;
-    /*border: 4px solid @border-color;*/
-    border: 0px;
-    box-shadow: inset 0 -3px @box-shadow-color;
+    padding: 2px;
+    border: 2px solid @border-color;
     /* Rounded corners */
     border-radius: 10px;
-    font-size:14px;
+    font-size: 13px;
     font-weight: bold;
     font-style: normal;
-    color:@iconcolor1;
+    color: @iconcolor1;
+}
+
+#battery.warning {
+    background: linear-gradient(118deg, rgba(240,126,4,1) 0%, rgba(201,7,3,1) 84%, rgba(255,164,0,1) 94%, rgba(255,241,0,1) 100%); 
+    margin: 5px 1px 8px 1px;
+    padding: 2px;
+    border: 2px solid @border-color;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    font-style: normal;
+    color: @iconcolor1;
+}
+
+#battery.critical {
+    background: linear-gradient(118deg, rgba(255, 0, 0, 1) 20%, rgba(255, 0, 0, 1) 20%, rgba(2, 0, 36, 1) 90%, rgba(2, 0, 36, 1) 90%);
+    margin: 5px 1px 8px 1px;
+    padding: 2px;
+    border: 2px solid @border-color;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    font-style: normal;
+    color: @iconcolor1;
 }
 
 #custom-pacman { 
-    background: @icon-color-background2;
+    background: rgb(255,79,0);
+    background: linear-gradient(111deg, rgba(255,79,0,1) 0%, rgba(255,147,0,1) 79%, rgba(251,255,0,1) 100%); 
     /* The 2nd and the last value of the margin, gives the spaces */
     margin: 5px 1px 8px 10px;
     /* Padding is the hight of the the widgets */
     padding:2px;
     /*border: 4px solid @border-color;*/
-    border: 0px;
-    box-shadow: inset 0 -3px @box-shadow-color;
+    border: 2px solid @border-color;
     /* Rounded corners */
     border-radius: 10px;
     font-size:14px;
     font-weight: bold;
     font-style: normal;
     color:@iconcolor2;
+}
+
+#tray {
+    background: linear-gradient(118deg, rgba(15, 80, 118, 1) 20%, rgba(15, 80, 118, 1) 20%, rgba(24, 145, 205, 1) 90%, rgba(24, 145, 205, 1) 90%); 
+    margin: 5px 1px 8px 10px;
+    padding: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    opacity: 0.8;
 }
 
