@@ -18,15 +18,16 @@
 
     // Choose the order of the modules
     "modules-center": ["hyprland/workspaces"],
-    //"modules-left": [],
-    "modules-right": [
+    "modules-left": [
         "tray",
+    ],
+    "modules-right": [
         "custom/pacman",
         "custom/dunst",
         "cpu",
         "memory",
         "backlight",
-        "wireplumber",
+        "pulseaudio",
         "battery",
         "custom/clock"
     ],
@@ -86,10 +87,10 @@
         "format": "  Bright: {percent}% {icon} ",
     },
 
-    "wireplumber": {
+    "pulseaudio": {
         "format": "  Vol:{volume}%  ",
         "format-muted": "   ",
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click": "pactl set-sink-mute 0 toggle",
         "max-volume": 100,
         "scroll-step": 5
     },
@@ -99,7 +100,7 @@
         "interval": 60,
         "states": {
             "warning": 30,
-            "critical": 15
+            "critical": 20
         },
         "format": "  Bat: {capacity}% {icon} ",
         "max-length": 25
