@@ -1,9 +1,9 @@
 /* Workspaces                                  */
 
-/* Black outer circle workspaces color */
+/* Outer circle workspaces color */
 @define-color workspaces-background1 #5A5C59;
 
-/* Inned circle workspaces color */
+/* Inner circle workspaces color */
 @define-color workspaces-background2 #0F5076;
 
 /* White font for workspace numbers*/
@@ -17,14 +17,9 @@
 
 /* Color used for pacman updates */
 @define-color iconcolor2 #FFFFFF;
-@define-color icon-color-background1 #0F5076;
-@define-color icon-color-background2 #EF6C00;
 
 /* Border color for memory, cpu, volume etc...*/
 @define-color border-color #1891CD;
-
-/* Wrap color for memory, cpu, volume etc...*/
-@define-color box-shadow-color #FFFFFF;
 
 /*                                             */ 
 
@@ -59,7 +54,7 @@ window#waybar {
     padding: 0px 5px;
     margin: 4px 3px;
     border-radius: 15px;
-    border: 0px;
+    border: 2px solid #172E42;
     color: @textcolor1;
     background-color: @workspaces-background2;
     transition: all 0.3s ease-in-out;
@@ -89,7 +84,7 @@ window#waybar {
 #language,
 #custom-clock,
 #custom-dunst,
-#wireplumber,
+#pulseaudio,
 #backlight,
 #battery {
     background: linear-gradient(118deg, rgba(15, 80, 118, 1) 20%, rgba(15, 80, 118, 1) 20%, rgba(24, 145, 205, 1) 90%, rgba(24, 145, 205, 1) 90%); 
