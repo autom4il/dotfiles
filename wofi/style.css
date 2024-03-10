@@ -4,9 +4,9 @@ window {
     font-size: 20px;
     font-family: "Fira Code Nerd Font Mono";
     margin: 10px;
-    border: 3px solid #CCCCC8;
-    background: rgb(23,46,66);
-    background: linear-gradient(117deg, rgba(23,46,66,1) 0%, rgba(78,81,79,1) 85%, rgba(78,81,79,1) 100%); 
+    border: 3px solid #0b63b4;
+    background: rgb(8,9,9);
+    background: linear-gradient(45deg, rgba(8,9,9,1) 0%, rgba(38,43,45,1) 81%);
     border-radius: 15px;
     color: white;
 }
@@ -40,6 +40,7 @@ window {
     border-radius: 20px;
     padding: 3px;
     background: #FFFFFF;
-    color: white;
+    /* Font color */
+    color: black;
 }
 
