@@ -55,29 +55,29 @@ window#waybar {
 
 #workspaces button {
     background: transparent;
-    padding: 0px 5px;
+    box-shadow: inset 0 -4px red;
+    border-radius: 0;
     margin: 4px 3px;
-    border: 0px;
-    color: @textcolor1;
+    /*color: @textcolor1;*/
     transition: all 0.3s ease-in-out;
-    opacity: 0.4;
+    opacity: 0.9;
 }
 
 #workspaces button.active {
     color: @textcolor1;
     background: transparent; 
-    border-radius: 15px;
+    border-radius: 0;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
     opacity:1.0;
 }
 
 #workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    border: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 -2px orange;
     color: @textcolor1;
-    background: @workspaces-background2;
-    border-radius: 15px;
-    opacity:0.7;
-    box-shadow: 0px -0px rgba(15, 80, 118, 1);
+    outline: none;
 }
 
 #memory,
@@ -134,7 +134,11 @@ window#waybar {
 #tray {
     background: transparent; 
     border: 7px solid transparent;
-    box-shadow: inset 0 -4px #e50000;
+    margin: 5px 1px 8px 10px;
+    padding: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: inset 0 -4px #5270d3;
     font-size: 14px;
     font-style: normal;
 }
