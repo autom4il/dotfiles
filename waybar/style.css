@@ -1,32 +1,20 @@
-/* Workspaces                                  */
-
-/* Black outer circle workspaces color */
-@define-color workspaces-background1 #5A5C59;
-
-/* Inned circle workspaces color */
-@define-color workspaces-background2 #0F5076;
-
-/* White font for workspace numbers*/
+/* Workspaces                                    */
 @define-color textcolor1 #FFFFFF;
-/*                                             */
+@define-color wsunderlinecolor #fb4a58;
+@define-color wsunderlinecoloractive #db154d;
+/*                                               */
 
-/* Widgets                                     */
+/* CPU, memory, brightness, volume, date */
+@define-color cpu #0376f3;
+@define-color pacmancolor #e7b63b;
+@define-color traycolor #5270d3;
+/*                                               */
 
-/* Color used for cpu, memory etc... */
-@define-color underline #900136;
-
-/* Color used for pacman updates */
-@define-color iconcolor2 #FFFFFF;
-@define-color icon-color-background1 #0F5076;
-@define-color icon-color-background2 #EF6C00;
-
-/* Border color for memory, cpu, volume etc...*/
-@define-color border-color #1891CD;
-
-/* Wrap color for memory, cpu, volume etc...*/
-@define-color box-shadow-color #FFFFFF;
-
-/*                                             */ 
+/* Battery                                       */
+@define-color normal #ffffff;
+@define-color warning #ff9001;
+@define-color critical #e50000;
+/*                                               */
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -55,10 +43,9 @@ window#waybar {
 
 #workspaces button {
     background: transparent;
-    box-shadow: inset 0 -4px #fb4a58;
+    box-shadow: inset 0 -4px @wsunderlinecolor;
     border-radius: 0;
     margin: 4px 3px;
-    /*color: @textcolor1;*/
     transition: all 0.3s ease-in-out;
     opacity: 0.9;
 }
@@ -66,7 +53,7 @@ window#waybar {
 #workspaces button.active {
     color: @textcolor1;
     background: transparent; 
-    box-shadow: inset 0 -4px #db154d;
+    box-shadow: inset 0 -4px @wsunderlinecoloractive;
     border-radius: 0;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
@@ -89,7 +76,7 @@ window#waybar {
 #backlight {
     background: transparent;
     border: 7px solid transparent;
-    box-shadow: inset 0 -4px #0376f3;
+    box-shadow: inset 0 -4px @cpu;
     font-size: 14px;
     /*font-weight: bold;*/
     font-style: normal;
@@ -99,7 +86,7 @@ window#waybar {
 #battery {
     background: transparent;
     border: 7px solid transparent;
-    box-shadow: inset 0 -4px #ffffff;
+    box-shadow: inset 0 -4px @normal;
     font-size: 14px;
     font-style: normal;
     color: @iconcolor1;
@@ -108,7 +95,7 @@ window#waybar {
 #battery.warning {
     background: transparent; 
     border: 7px solid transparent;
-    box-shadow: inset 0 -4px #ff9001;
+    box-shadow: inset 0 -4px @warning;
     font-size: 14px;
     font-style: normal;
     color: @iconcolor1;
@@ -117,7 +104,7 @@ window#waybar {
 #battery.critical {
     background: transparent; 
     border: 7px solid transparent;
-    box-shadow: inset 0 -4px #e50000;
+    box-shadow: inset 0 -4px @critical;
     font-size: 14px;
     font-style: normal;
     color: @iconcolor1;
@@ -126,7 +113,7 @@ window#waybar {
 #custom-pacman { 
     background: transparent; 
     border: 7px solid transparent;
-    box-shadow: inset 0 -4px #e7b63b;
+    box-shadow: inset 0 -4px @pacmancolor;
     font-size: 14px;
     font-style: normal;
     color: @iconcolor1;
@@ -139,7 +126,7 @@ window#waybar {
     padding: 2px;
     padding-left: 20px;
     padding-right: 20px;
-    box-shadow: inset 0 -4px #5270d3;
+    box-shadow: inset 0 -4px @traycolor;
     font-size: 14px;
     font-style: normal;
 }
