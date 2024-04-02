@@ -2,6 +2,7 @@
 @define-color textcolor1 #FFFFFF;
 @define-color wsunderlinecolor #fb4a58;
 @define-color wsunderlinecoloractive #db154d;
+@define-color wsunderlinecolorurgent #75ecf8;
 /*                                               */
 
 /* CPU, memory, brightness, volume, date */
@@ -54,6 +55,16 @@ window#waybar {
     color: @textcolor1;
     background: transparent; 
     box-shadow: inset 0 -4px @wsunderlinecoloractive;
+    border-radius: 0;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
+
+#workspaces button.urgent {
+    color: @textcolor1;
+    background: transparent; 
+    box-shadow: inset 0 -4px @wsunderlinecolorurgent;
     border-radius: 0;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
