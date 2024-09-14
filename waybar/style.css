@@ -83,7 +83,7 @@ window#waybar {
 #cpu,
 #language,
 #custom-clock,
-#pulseaudio,
+#wireplumber,
 #backlight {
     background: transparent;
     border: 7px solid transparent;

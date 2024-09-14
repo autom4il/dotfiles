@@ -17,7 +17,7 @@
         "3": "III",
         "4": "IV",
         "5": "V",
-        "urgent": "",
+        "urgent": "!",
         "focused": "",
         "default": ""
     },
@@ -35,7 +35,7 @@
             "cpu",
             "memory",
             "backlight",
-            "pulseaudio",
+            "wireplumber",
             "battery",
             "custom/clock"
         ]
@@ -61,12 +61,12 @@
         "format": "  Bright: {percent}% {icon} ",
     },
 
-    "pulseaudio": {
-        "format": "  Vol:{volume}%  ",
-        "format-muted": "   ",
-        "on-click": "pactl set-sink-mute 0 toggle",
+    "wireplumber": {
+        "format": " Vol:{volume}% ",
+        "format-muted": "Vol: X",
         "max-volume": 100,
-        "scroll-step": 5
+        "scroll-step": 0.5,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
 
     "battery": {
