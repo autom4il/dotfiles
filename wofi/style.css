@@ -1,0 +1,46 @@
+/* going to apply to add entry */
+
+window {
+    font-size: 20px;
+    font-family: "Terminess Nerd Font";
+    margin: 10px;
+    border: 3px solid #0b63b4;
+    background: rgb(8,9,9);
+    background: linear-gradient(45deg, rgba(8,9,9,1) 0%, rgba(38,43,45,1) 81%);
+    border-radius: 15px;
+    color: white;
+}
+
+#outer-box {
+    margin: 3px;
+    padding: 15px;
+}
+
+#entry {
+    padding: 8px;
+    border-radius: 6px;
+}
+
+#entry:selected {
+    background-color: #bbccdd;
+    background: linear-gradient(90deg, #bbccdd, ##227df3);
+}
+
+#text {
+    padding: 5px;
+}
+
+#text:selected {
+    color: black;
+}
+
+#input {
+    margin-bottom: 15px;
+    border: 2px solid #FFFFFF;
+    border-radius: 20px;
+    padding: 3px;
+    background: #FFFFFF;
+    /* Font color */
+    color: black;
+}
+

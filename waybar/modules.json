@@ -1,0 +1,88 @@
+{
+    // Left modules
+    "tray": {
+        "icon-size": 15,
+        "spacing": 10,
+    },
+
+    // Center modules
+    "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "warp-on-scroll": false,
+    "format": "{icon}",
+    "format-icons": {
+        "1": "I",
+        "2": "II",
+        "3": "III",
+        "4": "IV",
+        "5": "V",
+        "urgent": "!",
+        "focused": "",
+        "default": ""
+    },
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+
+    // Right modules
+    "group/system": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/arrow",
+            "custom/pacman",
+            "cpu",
+            "memory",
+            "backlight",
+            "wireplumber",
+            "battery",
+            "custom/clock"
+        ]
+    },
+
+    "custom/pacman": {
+        "format": " Pkg: {}  ",
+        "interval": "once",
+        "exec": "$HOME/.config/waybar/scripts/pacman-updates.sh",
+    },
+
+    "cpu": {
+        "interval": 1,
+        "format": "  CPU {usage}%  ",
+    },
+
+    "memory": {
+        "format": "  Mem: {}%  ",
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "  Bright: {percent}% {icon} ",
+    },
+
+    "wireplumber": {
+        "format": " Vol:{volume}% ",
+        "format-muted": "Vol: X",
+        "max-volume": 100,
+        "scroll-step": 0.5,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+
+    "battery": {
+        "bat": "BAT0",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "  Bat: {capacity}% {icon} ",
+        "max-length": 25
+    },
+
+    "custom/clock": {
+        "exec": "date +'  %H:%M %Y-%m-%d  '",
+        "interval": 1,
+    },
+}
+

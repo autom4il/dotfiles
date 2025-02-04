@@ -1,0 +1,29 @@
+{
+    // Waybar at top layer
+    "layer": "top",
+
+    "output": "eDP-1",
+
+    // Waybar position (top|bottom|left|right)
+    "position": "top",
+
+    // Waybar height (to be removed for auto height)
+    // "height": 10,
+
+    // Waybar width
+    "width": 1910,
+
+    // Gaps between modules (4px)
+    "spacing": 5,
+
+    "include": ["/home/autom4il/.config/waybar/modules.json"],
+
+    // Choose the order of the modules
+    "modules-center": ["hyprland/workspaces"],
+
+    "modules-left": ["tray"],
+
+    "modules-center": ["hyprland/workspaces"],
+
+    "modules-right": ["group/system"],
+}

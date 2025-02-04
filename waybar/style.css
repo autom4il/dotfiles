@@ -1,0 +1,144 @@
+/* Workspaces                                    */
+@define-color textcolor1 #FFFFFF;
+@define-color wsunderlinecolor #fb4a58;
+@define-color wsunderlinecoloractive #db154d;
+@define-color wsunderlinecolorurgent #75ecf8;
+/*                                               */
+
+/* CPU, memory, brightness, volume, date */
+@define-color cpu #0376f3;
+@define-color pacmancolor #e7b63b;
+@define-color traycolor #5270d3;
+/*                                               */
+
+/* Battery                                       */
+@define-color normal #ffffff;
+@define-color warning #ff9001;
+@define-color critical #e50000;
+/*                                               */
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "Terminess Nerd Font";
+    font-size: 18px;
+}
+
+/* Main waybar CSS style*/
+window#waybar {
+    background: rgba(12, 12, 12, 0.0);
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+}
+
+#workspaces {
+    background: transparent;
+    margin: 5px 1px 6px 1px;
+    padding: 0px 1px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-style: normal;
+    opacity: 0.8;
+    color: @textcolor1;
+}
+
+#workspaces button {
+    background: transparent;
+    box-shadow: inset 0 -4px @wsunderlinecolor;
+    border-radius: 0;
+    margin: 4px 3px;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.9;
+}
+
+#workspaces button.active {
+    color: @textcolor1;
+    background: transparent; 
+    box-shadow: inset 0 -4px @wsunderlinecoloractive;
+    border-radius: 0;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
+
+#workspaces button.urgent {
+    color: @textcolor1;
+    background: transparent; 
+    box-shadow: inset 0 -4px @wsunderlinecolorurgent;
+    border-radius: 0;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    border: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 -2px orange;
+    color: @textcolor1;
+    outline: none;
+}
+
+#memory,
+#cpu,
+#language,
+#custom-clock,
+#wireplumber,
+#backlight {
+    background: transparent;
+    border: 7px solid transparent;
+    box-shadow: inset 0 -4px @cpu;
+    font-size: 14px;
+    /*font-weight: bold;*/
+    font-style: normal;
+    color: @iconcolor1;
+}
+
+#battery {
+    background: transparent;
+    border: 7px solid transparent;
+    box-shadow: inset 0 -4px @normal;
+    font-size: 14px;
+    font-style: normal;
+    color: @iconcolor1;
+}
+
+#battery.warning {
+    background: transparent; 
+    border: 7px solid transparent;
+    box-shadow: inset 0 -4px @warning;
+    font-size: 14px;
+    font-style: normal;
+    color: @iconcolor1;
+}
+
+#battery.critical {
+    background: transparent; 
+    border: 7px solid transparent;
+    box-shadow: inset 0 -4px @critical;
+    font-size: 14px;
+    font-style: normal;
+    color: @iconcolor1;
+}
+
+#custom-pacman { 
+    background: transparent; 
+    border: 7px solid transparent;
+    box-shadow: inset 0 -4px @pacmancolor;
+    font-size: 14px;
+    font-style: normal;
+    color: @iconcolor1;
+}
+
+#tray {
+    background: transparent; 
+    border: 7px solid transparent;
+    margin: 5px 1px 8px 10px;
+    padding: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: inset 0 -4px @traycolor;
+    font-size: 14px;
+    font-style: normal;
+}
+

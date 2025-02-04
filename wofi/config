@@ -1,0 +1,9 @@
+mode=drun
+allow_images=true
+width=30%
+height=40%
+prompt=Application
+columns=1
+sort_order=alphabetical
+monitor=eDP-1
+image_size=20
