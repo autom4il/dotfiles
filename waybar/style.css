@@ -19,8 +19,8 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "Terminess Nerd Font";
-    font-size: 18px;
+    font-family: "JetBrainsMonoNL Nerd Font";
+    /*font-size: 11px;*/
 }
 
 /* Main waybar CSS style*/
@@ -32,6 +32,7 @@ window#waybar {
 }
 
 #workspaces {
+    font-size: 14px;
     background: transparent;
     margin: 5px 1px 6px 1px;
     padding: 0px 1px;
@@ -79,12 +80,13 @@ window#waybar {
     outline: none;
 }
 
+#custom-clock,
 #memory,
 #cpu,
 #language,
-#custom-clock,
 #wireplumber,
 #backlight {
+    background: rgb(205,214,244);
     background: transparent;
     border: 7px solid transparent;
     box-shadow: inset 0 -4px @cpu;
@@ -132,13 +134,11 @@ window#waybar {
 
 #tray {
     background: transparent; 
-    border: 7px solid transparent;
+    border: 3px solid transparent;
     margin: 5px 1px 8px 10px;
     padding: 2px;
     padding-left: 20px;
     padding-right: 20px;
     box-shadow: inset 0 -4px @traycolor;
-    font-size: 14px;
     font-style: normal;
 }
-
