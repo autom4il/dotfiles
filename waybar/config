@@ -19,11 +19,9 @@
     "include": ["/home/autom4il/.config/waybar/modules.json"],
 
     // Choose the order of the modules
-    "modules-center": ["hyprland/workspaces"],
+    // "modules-center": ["tray"],
 
-    "modules-left": ["tray"],
-
-    "modules-center": ["hyprland/workspaces"],
+    "modules-left": ["hyprland/workspaces", "tray"],
 
     "modules-right": ["group/system"],
 }
