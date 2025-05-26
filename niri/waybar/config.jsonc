@@ -1,0 +1,76 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 45, // Waybar height (to be removed for auto height)
+    "margin-top": 15, 
+    "width": 1280, // Waybar width
+    "reload_style_on_change": true,
+    "spacing": 4, // Gaps between modules (4px)
+
+    // Choose the order of the modules
+    "modules-left": [
+        "niri/workspaces",
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "tray",
+    ],
+
+    // Modules configuration
+    "niri/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "", 
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    // "network": {
+    //     "interface": "wlp2*", // (Optional) To force the use of this interface
+    //     "format-wifi": "Wifi: {essid} ({signalStrength}%)",
+    //     "format-ethernet": " {ipaddr}/{cidr}",
+    //     "tooltip-format": "{ifname} via {gwaddr}",
+    //     "format-linked": "Eth: {ifname} (No IP)",
+    //     "format-disconnected": "Eth: Disconnected",
+    //     "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    // },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+}
