@@ -9,18 +9,18 @@
 window#waybar {
     /* Faiding color */
     /*background: linear-gradient(45deg, #0a3949 30%, #114c5c 30%, #114c5c 55%, #709eab 55%, #709eab 90%, #f6f4ef 90%);*/
-    background: linear-gradient(45deg, #0a3949 30%, #114c5c 30%, #114c5c 60%, #709eab 60%, #709eab 90%, #d3e1e4 90%);
+    background: linear-gradient(45deg, #0a3949 30%, #114c5c 30%, #114c5c 60%, #709eab 60%, #709eab 80%, #d3e1e4 80%);
     border: 4px solid #4e8ba1 /*#e2e9e9*/;
     border-radius: 10px;
 }
 
-#tray,
-#pulseaudio {
+#tray {
     margin: 6px 6px 6px 0px;
-    padding: 2px 8px;
+    padding: 2px 20px;
+    padding-right: 20px;
 }
 
-#workspaces{
+#workspaces {
     background: rgba(23, 23, 23, 0.0);
     color: #888789;
     box-shadow: none;
@@ -61,6 +61,19 @@ window#waybar {
     padding-right: 50px;
 }
 
-#pulseaudio {
+#wireplumber {
+    background: linear-gradient(45deg, #d3e1e4 0%, #ffffff 70%, #ffffff 60%, #d3e1e4 100%);
+    border: 2px solid #e59f49;
+    border-radius: 10px;
     color: #000000;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    margin: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#wireplumber.muted {
+    padding-left: 27px;
+    padding-right: 27px;
 }

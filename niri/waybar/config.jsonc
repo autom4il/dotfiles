@@ -16,6 +16,7 @@
         "clock"
     ],
     "modules-right": [
+        "wireplumber",
         "tray",
     ],
 
@@ -26,18 +27,15 @@
         "warp-on-scroll": false,
         "format": "{icon}",
         "format-icons": {
-            "1": "", 
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "urgent": "",
-            "focused": "",
-            "default": ""
+            "1": "I", 
+            "2": "II",
+            //"urgent": "",
+            //"focused": "",
+            //"default": ""
         }
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 21,
         "spacing": 10
     },
     "clock": {
@@ -54,23 +52,10 @@
     //     "format-disconnected": "Eth: Disconnected",
     //     "format-alt": "{ifname}: {ipaddr}/{cidr}"
     // },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+    "wireplumber": {
+        "scroll-step": 5, // %, can be a float
+        "format": " {volume}%",
+        "format-muted": " X",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     },
 }
