@@ -1,5 +1,5 @@
 /* Workspaces                                    */
-@define-color textcolor1 #FFFFFF;
+@define-color textcolor1 #ffba24;
 @define-color wsunderlinecolor #fb4a58;
 @define-color wsunderlinecoloractive #db154d;
 @define-color wsunderlinecolorurgent #75ecf8;
@@ -20,52 +20,59 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "JetBrainsMonoNL Nerd Font";
+    min-height: 0;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 0;
     /*font-size: 11px;*/
 }
 
 /* Main waybar CSS style*/
 window#waybar {
-    background: rgba(12, 12, 12, 0.0);
+    background: linear-gradient(135deg, #012350 10%, #012350 15%, #0d669c 20%, #0d669c 80%, #0057b2 80%, #0057b2 100%);
     padding-left: 10px;
     padding-right: 10px;
+    border: 4px solid #b2ced1;
     border-radius: 15px;
 }
 
 #workspaces {
     font-size: 14px;
     background: transparent;
+    box-shadow: none;
     margin: 5px 1px 6px 1px;
     padding: 0px 10px;
     border-radius: 15px;
     font-weight: bold;
-    font-style: normal;
     opacity: 0.8;
     color: @textcolor1;
+    text-shadow: none;
 }
 
 #workspaces button {
-    background: transparent;
-    box-shadow: inset 0 -4px @wsunderlinecolor;
-    border-radius: 0;
-    margin: 4px 3px;
+    all: initial;
+    /*background: transparent;*/
+    /*border-radius: 0;*/
+    box-shadow: inset 0 -3px transparent;
+    font-style: italic;
+    margin: 4px 5px;
+    padding-right: 5px;
     transition: all 0.3s ease-in-out;
-    opacity: 0.9;
+    /*opacity: 0.9;*/
 }
 
 #workspaces button.active {
     color: @textcolor1;
     background: transparent; 
-    box-shadow: inset 0 -4px @wsunderlinecoloractive;
-    border-radius: 0;
-    min-width: 40px;
+    /*border-radius: 0;*/
+    min-width: 20px;
     transition: all 0.3s ease-in-out;
-    opacity:1.0;
+    /*opacity:1.0;*/
 }
 
 #workspaces button.urgent {
     color: @textcolor1;
     background: transparent; 
-    box-shadow: inset 0 -4px @wsunderlinecolorurgent;
     border-radius: 0;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
@@ -73,14 +80,12 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-    border: rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 -2px orange;
+    /*background: rgba(0, 0, 0, 0.2);*/
+    /*border: rgba(0, 0, 0, 0.2);*/
     color: @textcolor1;
-    outline: none;
+    /*outline: none;*/
 }
 
-#custom-clock,
 #memory,
 #cpu,
 #language,
@@ -89,17 +94,15 @@ window#waybar {
     background: rgb(205,214,244);
     background: transparent;
     border: 7px solid transparent;
-    box-shadow: inset 0 -4px @cpu;
-    font-size: 14px;
+    font-size: 18px;
     /*font-weight: bold;*/
-    font-style: normal;
+    font-style: italic;
     color: @iconcolor1;
 }
 
 #battery {
     background: transparent;
     border: 7px solid transparent;
-    box-shadow: inset 0 -4px @normal;
     font-size: 14px;
     font-style: normal;
     color: @iconcolor1;
@@ -108,28 +111,37 @@ window#waybar {
 #battery.warning {
     background: transparent; 
     border: 7px solid transparent;
-    box-shadow: inset 0 -4px @warning;
-    font-size: 14px;
-    font-style: normal;
-    color: @iconcolor1;
+    font-size: 18px;
+    font-style: italic;
+    color: #000000;
 }
 
 #battery.critical {
     background: transparent; 
     border: 7px solid transparent;
-    box-shadow: inset 0 -4px @critical;
-    font-size: 14px;
-    font-style: normal;
+    font-size: 18px;
+    font-style: italic;
     color: @iconcolor1;
+}
+
+#clock {
+    background: rgb(205,214,244);
+    background: transparent;
+    border: 7px solid transparent;
+    font-size: 18px;
+    /*font-weight: bold;*/
+    font-style: italic;
+    color: @iconcolor1;
+    padding-right: 8px;
 }
 
 #custom-pacman { 
     background: transparent; 
     border: 7px solid transparent;
-    box-shadow: inset 0 -4px @pacmancolor;
-    font-size: 14px;
-    font-style: normal;
+    font-size: 18px;
+    font-style: italic;
     color: @iconcolor1;
+    padding-left: 10px;
 }
 
 #tray {
@@ -139,6 +151,6 @@ window#waybar {
     padding: 2px;
     padding-left: 20px;
     padding-right: 20px;
-    box-shadow: inset 0 -4px @traycolor;
+    padding-top: 5px;
     font-style: normal;
 }

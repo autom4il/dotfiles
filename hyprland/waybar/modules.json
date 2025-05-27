@@ -1,7 +1,7 @@
 {
     // Left modules
     "tray": {
-        "icon-size": 15,
+        "icon-size": 20,
         "spacing": 10,
     },
 
@@ -19,14 +19,14 @@
         "5": "V",
         "urgent": "!",
         "focused": "",
-        "default": ""
+        "default": "?"
     },
         "persistent-workspaces": {
             "*": 5
         }
     },
 
-    // Right modules
+    // Center modules
     "group/system": {
         "orientation": "horizontal",
         "modules": [
@@ -37,7 +37,6 @@
             "backlight",
             "wireplumber",
             "battery",
-            "custom/clock"
         ]
     },
 
@@ -62,11 +61,11 @@
     },
 
     "wireplumber": {
-        "format": " Vol:{volume}% ",
-        "format-muted": "Vol: X",
+        "format": "  Vol:{volume}%  ",
+        "format-muted": " Vol: X ",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "max-volume": 100,
-        "scroll-step": 0.5,
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        "scroll-step": 5
     },
 
     "battery": {
@@ -80,8 +79,8 @@
         "max-length": 25
     },
 
-    "custom/clock": {
-        "exec": "date +'  %H:%M %Y-%m-%d  '",
+    "clock": {
+        "format": "{:%H:%M:%S}",
         "interval": 1,
     },
 }

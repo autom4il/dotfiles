@@ -11,17 +11,20 @@
     // "height": 10,
 
     // Waybar width
-    "width": 1910,
+    "width": 1500,
 
     // Gaps between modules (4px)
     "spacing": 5,
 
+    // Gap from the top of the screen
+    "margin-top": 10,
+
     "include": ["/home/autom4il/.config/waybar/modules.json"],
 
     // Choose the order of the modules
-    // "modules-center": ["tray"],
+    "modules-left": ["hyprland/workspaces"],
 
-    "modules-left": ["hyprland/workspaces", "tray"],
+    "modules-center": ["group/system"],
 
-    "modules-right": ["group/system"],
+    "modules-right": ["tray", "clock"],
 }
