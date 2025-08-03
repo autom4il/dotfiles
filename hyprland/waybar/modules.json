@@ -73,7 +73,7 @@
         "interval": 60,
         "states": {
             "warning": 30,
-            "critical": 20
+            "critical": 25
         },
         "format": "  Bat: {capacity}% {icon} ",
         "max-length": 25
@@ -81,7 +81,8 @@
 
     "clock": {
         "format": "{:%H:%M:%S}",
-        "interval": 1,
+        //"format-alt": "{:%d-%m-%Y}"
+        "format-alt": "{:%A, %d %B, %Y}"
     },
 }
 
