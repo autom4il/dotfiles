@@ -81,8 +81,9 @@
 
     "clock": {
         "format": "{:%H:%M:%S}",
-        //"format-alt": "{:%d-%m-%Y}"
-        "format-alt": "{:%A, %d %B, %Y}"
+        "format-alt": "{:%A, %d %B, %Y}",
+        "interval": 1,
+        "tooltip": false
     },
 }
 
