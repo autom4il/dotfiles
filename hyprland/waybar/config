@@ -19,7 +19,7 @@
     // Gap from the top of the screen
     "margin-top": 10,
 
-    "include": ["/home/autom4il/.config/waybar/modules.json"],
+    "include": ["/home/autom4il/.config/waybar/modules.jsonc"],
 
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
