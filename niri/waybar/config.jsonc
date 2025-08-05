@@ -4,7 +4,7 @@
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 45, // Waybar height (to be removed for auto height)
     "margin-top": 15, 
-    "width": 1280, // Waybar width
+    "width": 1500, // Waybar width
     "reload_style_on_change": true,
     "spacing": 4, // Gaps between modules (4px)
 
@@ -16,6 +16,7 @@
         "clock"
     ],
     "modules-right": [
+        "custom/pacman",
         "wireplumber",
         "tray",
     ],
@@ -29,19 +30,17 @@
         "format-icons": {
             "1": "I", 
             "2": "II",
+            "3": "III",
             //"urgent": "",
             //"focused": "",
             //"default": ""
         }
     },
-    "tray": {
-        "icon-size": 21,
-        "spacing": 10
-    },
     "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%H:%M:%S}",
+        "format-alt": "{:%A, %d %B, %Y}",
+        "interval": 1,
+        "tooltip": false
     },
     // "network": {
     //     "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -52,10 +51,19 @@
     //     "format-disconnected": "Eth: Disconnected",
     //     "format-alt": "{ifname}: {ipaddr}/{cidr}"
     // },
+    "custom/pacman": {
+        "format": "  {} ",
+        "interval": "once",
+        "exec": "$HOME/.config/waybar/scripts/pacman_updates.sh",
+    },
     "wireplumber": {
         "scroll-step": 5, // %, can be a float
         "format": " {volume}%",
         "format-muted": " X",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
     },
 }
